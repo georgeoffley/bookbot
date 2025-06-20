@@ -14,3 +14,15 @@ def count_characters(content: str) -> dict[str, int]:
                 collection[char] = 1
 
     return collection
+
+def pretty_list(char_counts: dict[str, int]) -> list:
+    new_list = []
+    for char, count in char_counts.items():
+        new_list.append({
+            'char': char,
+            'num': count
+        })
+
+    new_list.sort(reverse=True, key=lambda x: x['num'])
+
+    return new_list
